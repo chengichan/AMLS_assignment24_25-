@@ -137,7 +137,7 @@ class BloodCNN(nn.Module):
             nn.BatchNorm1d(512),  # Normalize activations
             nn.ReLU(inplace=True),
             nn.Dropout(0.5),  # Higher dropout in classifier
-            nn.Linear(512, num_classes)  # Output layer (8 classes)
+            nn.Linear(512, num_classes)  # Output layer (8 classes), the CossEntoypyLoss() alreay contain softmax() hence no need writing here
         )
     
     def forward(self, x):
